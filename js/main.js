@@ -1,26 +1,17 @@
-import $ from "jquery";
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.css"; // Import precompiled Bootstrap css
-import "@fortawesome/fontawesome-free/css/all.css";
-import 'slick-carousel';
-
-import * as mainStyles from '../scss/main.scss';
-import * as globalStyles from '../scss/global.scss';
-
-
-$('.bubleSlide').slick({
-    speed: 700,
-    fade: true,
-    arrows: false,
-    autoplay: false,
-    dots: true,
-    cssEase: 'linear',
-    customPaging: function (slider, i) {
-        var icon = $(slider.$slides[i]).data('icon');
-        return '<span class="bubleSlide__icon fa fa-' + icon + '"></span>';
-    }
+$(function () {
+    $('.bubleSlide').slick({
+        speed: 700,
+        fade: true,
+        arrows: false,
+        autoplay: false,
+        dots: true,
+        cssEase: 'linear',
+        customPaging: function (slider, i) {
+            var icon = $(slider.$slides[i]).data('icon');
+            return '<span class="bubleSlide__icon fa fa-' + icon + '"></span>';
+        }
+    });
 });
-
 
 
 // 2. This code loads the IFrame Player API code asynchronously.
