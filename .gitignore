@@ -1,1 +1,6 @@
-bootstrap-4.0.0-alpha.2.compiled.zip
+node_modules
+.idea
+bower_components
+.cache
+.parcel-cache
+dist
