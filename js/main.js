@@ -50,6 +50,7 @@ function onYouTubeIframeAPIReady() {
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
+    event.target.setVolume(0);
     //not autoplay for mobiles
     if(window.innerWidth > 800 && window.innerHeight > 600) {
         if (event.target) {
@@ -58,21 +59,4 @@ function onPlayerReady(event) {
     }
 }
 
-
-//this pauses the video when it's out of view, just wrap your video in .m-//video
-$(window).scroll(function () {
-    var hT = $('.m-video').height(),
-        wS = $(this).scrollTop();
-    if (wS > hT) {
-        if (player) {
-            player.setVolume(0);
-        }
-    }
-    else {
-        if(player) {
-
-            player.setVolume(Math.abs(100 - (100*wS)/hT));
-        }
-    }
-});
 
